@@ -1,0 +1,6 @@
+{
+    "models": ["plane.obj"],
+    "textures": ["swatches.jpg", "yellow.jpg"],
+    "shaders": ["vShader.glsl", "fShader.glsl"],
+    "audios": [ ]
+}
