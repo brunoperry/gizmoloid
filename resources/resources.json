@@ -1,5 +1,5 @@
 {
-    "models": ["plane.obj"],
+    "models": ["cube.obj"],
     "textures": ["swatches.jpg", "yellow.jpg"],
     "shaders": ["vShader.glsl", "fShader.glsl"],
     "audios": [ ]

@@ -18,6 +18,8 @@ class FBXLoader extends Loader {
         await this.createMaterials(obj);
         this.createModels(obj);
 
+
+
         return true;
     }
 
@@ -38,7 +40,6 @@ class FBXLoader extends Loader {
             mData[i].texture = this.getTextureFromConnection(mat.materialID);
             mData[i].shaders = this.shadersData;
         }
-        console.log(mData)
 
         return super.createMaterials(mData);
     }
@@ -68,6 +69,8 @@ class FBXLoader extends Loader {
                 mData.push(model);
             }
         }
+
+        console.log(mData)
         super.createModels(mData);
     }
 

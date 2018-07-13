@@ -20,19 +20,17 @@ class Loader {
     }
 
     createModels(modelsData) {
+
         for (let i = 0; i < modelsData.length; i++) {
             const model = modelsData[i];
             const gameObject = new GameObject(model.mesh.name);
             gameObject.addComponent(model);
-
-            // console.log(model)
 
             const mRenderer = new MeshRenderer();
             mRenderer.setData(gl.ctx, model.material, model.mesh);
             gameObject.addComponent(mRenderer);
             this.models.push(gameObject)
         }
-
     }
 
     createMeshes(meshesData) {
@@ -87,6 +85,18 @@ class Loader {
                 const elementJ = element[j];
                 if (elementJ.id === id) {
                     return elementJ;
+                }
+            }
+        }
+    }
+
+    getMatByName(name) {
+
+        for (let i = 0; i < this.materials.length; i++) {
+            const mat = this.materials[i];
+            for(let j = 0; j < mat.length; j++) {
+                if(mat[j].name === name) {
+                    return mat[j];
                 }
             }
         }

@@ -13,21 +13,23 @@ class Resources {
         const shadersData = await Resources.loadShaders(res.shaders);
         const filesData = await Resources.loadFiles(res.models);
 
-        const models = [];
+        const data = [];
         for (let i = 0; i < filesData.length; i++) {
             const fData = filesData[i];
-
-            let l;
+            let loader;
             if(filesData[i].includes("FBX")) {
-                l = new FBXLoader(fData, shadersData);
+                loader = new FBXLoader(fData, shadersData);
             } else {
-                l = new OBJLoader(fData, shadersData);
+                loader = new OBJLoader(fData, shadersData);
             }
-            models.push(l.models);
-            const f = await l.build();
+
+            const loaderData = await loader.build();
+
+            console.log(loader)
+            data.push(loader.models)
         }
 
-        return models;
+        return data;
     }
 
     static async loadShaders(shadersURL) {

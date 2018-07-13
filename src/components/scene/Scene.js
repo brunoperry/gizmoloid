@@ -29,6 +29,8 @@ class Scene {
 
         for (let i = 0; i < this.gameObjects.length; i++) {
             const go = this.gameObjects[i];
+
+            console.log(go)
             if(go.name === goName) return go;
         }
 

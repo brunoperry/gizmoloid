@@ -10,6 +10,8 @@ window.onload = async () => {
 
     const resources = await Resources.init();
 
+
+
     gzm = new GizmoGL(resources);
 
     btn = document.getElementById("startstop-button")
